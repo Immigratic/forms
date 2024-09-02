@@ -21,7 +21,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<div id="wrapper" data-tf-widget="xi12acMo" data-tf-inline-on-mobile data-tf-medium="snippet"></div>
+<div id="wrapper"></div>
 
 <script src="//embed.typeform.com/next/embed.js"></script>
 <script>
@@ -37,7 +37,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.addEventListener('DOMContentLoaded', function() {
     const wrapper = document.getElementById('wrapper');
     const hiddenFields = getQueryParams();
-    wrapper.setAttribute('data-tf-hidden', hiddenFields);
+    const formUrl = `https://immigratic.typeform.com/to/xi12acMo?${hiddenFields}`;
+    
+    // Create the iframe with the full URL
+    const iframe = document.createElement('iframe');
+    iframe.src = formUrl;
+    iframe.width = "100%";
+    iframe.height = "100%";
+    iframe.style.border = "none";
+    
+    // Append the iframe to the wrapper
+    wrapper.appendChild(iframe);
   });
 </script>
 </body>
